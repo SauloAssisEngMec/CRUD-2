@@ -1,0 +1,15 @@
+<div class="card" style="width: 18rem;">
+    <img [src]="photo" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"> 
+        {{productName | uppercase}}
+        <span *ngIf="sale; else elseBlock" class="badge bg-success"> Sale </span>
+        <ng-template #elseBlock><span  class="badge bg-primary"> Join</span></ng-template>       
+      </h5>
+      
+      <p class="card-text">Identification: {{idProduct | number: '2.0-0'}} <br>
+        Expery Date: {{expirationDate | date: 'shortDate'}}
+      </p>
+      <a href="#" class="btn btn-primary"> {{productPrice | currency: 'BRL'}} </a>
+    </div>
+  </div>

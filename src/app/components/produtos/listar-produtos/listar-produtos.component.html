@@ -1,0 +1,42 @@
+<h1 class="my-3 text-primary">
+    Show Products
+    <button type="button" routerLink="/produtos/cadastrar" class="btn btn-success mt-2 float-end">Register</button>
+</h1>
+
+<div class="card shadow">
+    <table class="table table-responsive table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Expery date</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prod of productList">
+                <td> {{prod.id}} </td>
+                <td> {{prod.name}} </td>
+                <td> {{prod.expiryDate | date: 'shortDate'}} </td>
+                <td>{{prod.price | currency: 'BRL'}}</td>
+                <td>
+                    <button class="btn btn-warning" routerLink="/produtos/atualizar/{{ prod.id }}">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn btn-danger ms-2" [swal]="{
+                        title: 'WARNING!!',
+                        text: 'Are you sure to delete'+ prod.name + '?',
+                        showDenyButton: true,
+                        denyButtonText: 'No',
+                        confirmButtonText: 'Confirm',
+                        icon: 'warning'
+                    }" (confirm)="deletar(prod)"> 
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

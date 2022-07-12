@@ -1,0 +1,31 @@
+<h1>Welcome to angular course</h1>
+
+<h4 class="text-danger"> {{advertisement}}</h4>
+
+<div class="row">
+    <div class="col">
+        <app-card-produto 
+            [photo]="photo"
+            [productName]="productName"
+            [sale]="sale"
+            [idProduct]="idProduct"
+            [expirationDate]="expirationDate"
+            [productPrice]="productPrice">    
+        </app-card-produto>
+    </div>
+        <div class="col">
+            <app-card-produto 
+                photo="https://arquivo.devmedia.com.br/cursos/imagem/curso_o-que-e-react_2127.png"
+                [productName]="productName"
+                [sale]="sale"
+                [idProduct]="idProduct"
+                [expirationDate]="expirationDate"
+                [productPrice]="productPrice">    
+            </app-card-produto>
+        
+    </div>
+</div>
+
+
+
+

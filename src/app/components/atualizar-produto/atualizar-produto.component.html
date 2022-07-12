@@ -1,0 +1,43 @@
+<h1 class="my-3 text-primary">Update product</h1>
+<div class="card shadow">
+    <form class="m-3">
+        <div class="row">
+            <div class="col-md-12"> 
+                <div class="form-group">
+                    <label for="name">ProductName</label>
+                    <input type="text" class="form-control" 
+                    placeholder="Enter product name" name="productName"
+                     [(ngModel)]="product.name">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="date" class="form-control" 
+                    placeholder="0.0" name="expiryDate" 
+                    [(ngModel)]="product.expiryDate">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" class="form-control"
+                     name="price" 
+                     [(ngModel)]="product.price" >
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <button class="btn  btn-danger  mt-2" routerLink="/produtos">Back</button>
+                <button (click)="saveProduct()" class="btn 
+                 btn-warning float-end mt-2" >Update</button>
+            </div>
+        </div>
+    </form>
+</div>
